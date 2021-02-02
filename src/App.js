@@ -11,6 +11,7 @@ function App() {
   
 
   useEffect(() => {
+    isLoading(true)
 
     if( navigator.geolocation){
 
@@ -33,6 +34,9 @@ function App() {
             isLoading(false)
           }))
       });
+
+    } else {
+      isLoading(false)
     }
 
   },[]);
@@ -76,11 +80,11 @@ function App() {
         <header className="App-header">
           <h1>How is the weather ? </h1>
           <div>Loading your current location wait...</div>
+          <div>Turn on your geolocation please 😇 </div>
         </header>
       </div>
     )
-  }
-
+  } 
 
   return (
     <div className="App">
